@@ -1,4 +1,6 @@
 using app.interactions from '../db/interactions';
+using V_INTERACTION from '../db/interactions';
+
 service CatalogService {
  
 @requires: 'authenticated-user'
@@ -9,5 +11,8 @@ service CatalogService {
 @restrict: [{ grant: 'READ', where: 'LANGU = ''DE'''}]
  entity Interactions_Items
     as projection on  interactions.Interactions_Items;
+
+@readonly
+entity V_interaction as projection on V_INTERACTION;
 
 }
